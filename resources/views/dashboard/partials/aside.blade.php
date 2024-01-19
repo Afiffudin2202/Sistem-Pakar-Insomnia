@@ -17,13 +17,13 @@
     <!-- Sidebar -->
     <div class="sidebar sidebar-dark">
         <!-- Sidebar Menu -->
-        <nav class="mt-2">
+        <nav class="mt-5">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="../gallery.html" class="nav-link">
+                    <a href="{{ url('/dashboard') }}" class="nav-link {{ request()->segment(1) == 'dashboard' ? 'active' : '' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 37 37"
                             fill="none">
                             <g clip-path="url(#clip0_215_77)">
@@ -71,7 +71,7 @@
                     <a href="{{ url('/dashboard/riwayat') }}" class="nav-link {{ request()->segment(2) == 'riwayat' ? 'active' : ''  }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
-                            Riwayat Diagnosa Pasien
+                            Riwayat Diagnosa 
                         </p>
                     </a>
                 </li>

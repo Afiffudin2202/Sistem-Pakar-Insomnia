@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DiagnosaController;
-use App\Http\Controllers\GejalaController;
-use App\Http\Controllers\PenyakitController;
-use App\Http\Controllers\RiwayatController;
-use App\Http\Controllers\RuleController;
+use App\Models\Gejala;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RuleController;
+use App\Http\Controllers\GejalaController;
+use App\Http\Controllers\RiwayatController;
+use App\Http\Controllers\DiagnosaController;
+use App\Http\Controllers\PenyakitController;
+use App\Models\Penyakit;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,9 @@ Route::get('/beranda', function () {
 Route::get('/diagnosa', function () {
     return view('diagnosa');
 });
+Route::get('/informasi', function () {
+    return view('informasi');
+});
 
 // middleware route untuk logout dan menu diagnosa
 Route::middleware(['auth'])->group(function () {
@@ -50,7 +55,9 @@ Route::middleware(['auth'])->group(function () {
 // dashboard admin
 Route::middleware(['auth', 'checkRole'])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard.index');
+        $gejala = Gejala::count();
+        $penyakit = Penyakit::count();
+        return view('dashboard.index', compact('gejala', 'penyakit'));
     });
     // penyakit
     Route::get('/dashboard/penyakit', [PenyakitController::class, 'index']);

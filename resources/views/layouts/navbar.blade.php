@@ -24,14 +24,14 @@
                     @if (auth()->user()->level == 1)
                         <li class="nav-item">
                             <a class="nav-link {{ request()->segment(1) == 'dashboard' ? 'active' : '' }}"
-                                href="{{ url('/dashboard') }}">Dashboard</a>
+                                href="{{ url('/dashboard') }}">Manager Data</a>
                         </li>
                     @endif
                 @endauth
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Informasi penyakit</a>
+                    <a class="nav-link {{ request()->segment(1) == 'informasi' ? 'active' : '' }}" href="{{ url('/informasi') }}">Informasi penyakit</a>
                 </li>
-            </ul>
+            </ul> 
         </div>
         @auth
             <div class="login-regis">
