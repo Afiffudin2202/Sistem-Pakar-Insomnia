@@ -23,18 +23,27 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h4>Insomnia Akut</h4>
-                            <p>Insomnia akut terjadi secara mendadak dan dapat berlangsung dari hanya 1 malam sampai
-                                beberapa minggu.</p>
+                            <p>Insomnia akut adalah insomnia yang berlangsung antara satu hingga tiga minggu</p>
                         </div>
                         <div class="col-lg-12">
                             <h4>Insomnia Kronic</h4>
-                            <p>Insomnia kronis terjadi setidaknya 3 malam dalam 1 minggu dan berlangsung selama 3 bulan atau
-                                lebih..</p>
+                            <p>Insomnia kronic adalah insomnia yang berlangsung setidaknya tiga kali seminggu selama tiga bulan atau lebih</p>
                         </div>
                         <div class="col-lg-12">
                             <h4>Insomnia Temporer</h4>
-                            <p>Insomnia temporer adalah kondisi yang mirip dengan insomnia akut, tetapi berlangsung selama
-                                beberapa minggu hingga beberapa bulan..</p>
+                            <p>Insomnia temporer adalah insomnia yang berlangsung kurang dari satu minggu</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <h4>Insomnia Psychophysiologicalt</h4>
+                            <p>Insomnia Psychophysiologicalt adalah insomnia yang terjadi karena kekhawatiran berlebihan tentang tidur dan upaya keras untuk tidur, yang justru menyebabkan sulit tidur</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <h4>Insomnia Komorbid</h4>
+                            <p>Insomnia komorbid adalah insomnia yang terjadi bersamaan dengan kondisi medis atau gangguan mental lainnya</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <h4>Insomnia Primer</h4>
+                            <p>Insomnia primer adalah insomnia yang tidak terkait dengan kondisi medis atau gangguan mental lainnya dan merupakan gangguan tersendiri</p>
                         </div>
                     </div>
                 </div>

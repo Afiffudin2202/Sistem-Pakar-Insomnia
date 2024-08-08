@@ -14,6 +14,7 @@ class RiwayatController extends Controller
     public function index()
     {
         $riwayat = Diagnosa::with('user', 'rule')->get();
+      
         return view('dashboard.riwayat.riwayat', compact('riwayat'));
     }
 
@@ -41,8 +42,6 @@ class RiwayatController extends Controller
                 return "Gejala tidak ditemukan";
             }
         });
-        // dd($gejala_filtered);
-        // return view('diagnosa.printhasil', compact('riwayat', 'gejala_filtered'));
         // Buat objek PDF
         $dompdf = new Dompdf();
         $pdf = new PDF($dompdf, config(), app('files'), view());

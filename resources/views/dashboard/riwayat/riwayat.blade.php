@@ -109,7 +109,7 @@
                                     @foreach ($riwayat as $item)
                                         <tr>
                                             <td>{{ $item->user->nama }}</td>
-                                            <td>{{ $item->rule->penyakit->nama_penyakit }}</td>
+                                            <td>{{ $item->kd_penyakit == 'tidak ada' ? 'tidak ada' :  $item->rule->penyakit->nama_penyakit }}</td>
                                             <td>{{ $item->created_at }}</td>
                                             <td>
                                                 <div class="btn-group gap-1">

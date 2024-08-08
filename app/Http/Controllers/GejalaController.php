@@ -13,7 +13,6 @@ class GejalaController extends Controller
     public function index()
     {
         $gejala = Gejala::all();
-
         return view('dashboard.gejala.gejala', compact('gejala'));
     }
 
@@ -63,16 +62,12 @@ class GejalaController extends Controller
     public function update(Request $request, $kd_gejala)
     {
         $gejala = Gejala::where('kd_gejala', $kd_gejala);
-
         $rules = [
             'kd_gejala' => 'required|min:3|max:3',
             'nama_gejala' => 'required'
         ];
-
         $validated = $request->validate($rules);
         $gejala->update($validated);
-
-
         return redirect('/dashboard/gejala')->with('success', 'Berhasil edit Gejala');
     }
 
@@ -82,9 +77,7 @@ class GejalaController extends Controller
     public function destroy($kd_gejala)
     {
         $gejala = Gejala::where('kd_gejala', $kd_gejala);
-
         $gejala->delete();
-
         return redirect('/dashboard/gejala')->with('success', 'Data berhasil dihapus');
     }
 }

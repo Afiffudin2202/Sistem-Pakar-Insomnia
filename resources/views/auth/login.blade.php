@@ -1,6 +1,5 @@
 @extends('layouts.main')
 @section('content')
-
     <div class="session w-50 my-3 mx-auto">
         {{-- session register --}}
         @if (session()->has('success'))
@@ -18,10 +17,10 @@
             </div>
         @endif
     </div>
-    <div class="container" style="height: 80vh; display: flex; align-items: center;">
-        <div class="row w-100 justify-content-center ">
-            <div class="card shadow-lg  d-flex flex-row">
-                <div class="col-lg-6 bg-insom p-5 d-flex align-items-center">
+    <div class="container" >
+        <div class="card shadow-lg mt-5">
+            <div class="row justify-content-center ">
+                <div class="col-lg-6 col-sm-12 bg-insom p-5 ">
                     <h1>Sistem Pakar Diagnosa Insomnia</h1>
                 </div>
                 <div class="col-lg-6 p-5">
@@ -44,4 +43,11 @@
             </div>
         </div>
     </div>
+
+    {{-- <div class="container">
+        <div class="row m-0 p-0">
+            <div class="col-lg-6"></div>
+            <div class="col-lg-6"></div>
+        </div>
+    </div> --}}
 @endsection

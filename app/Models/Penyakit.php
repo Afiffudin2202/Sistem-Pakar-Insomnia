@@ -15,4 +15,6 @@ class Penyakit extends Model
         'nama_penyakit',
         'penyembuhan'
     ];
+
+    
 }

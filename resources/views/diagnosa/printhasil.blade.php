@@ -14,14 +14,14 @@
               <h3>Data pasien</h3>
               <p>Nama: {{ $riwayat->user->nama }}</p>
               <p>Jenis kelamin: {{ $riwayat->user->jns_kelamin }}</p>
-              <p>Tanggal lahir: {{ $riwayat->user->tgl_lahir }}</p>
+              <p>Tanggal lahir: {{ date("d-m-Y",strtotime($riwayat->user->tgl_lahir ))}}</p>
             </div>
           </div>
         </div>
 
         <div class="row p-5">
           <div class="col-lg-12 p-3 border rounded-0">
-            <p>Berdasarkan hasil diagnosa sistem pakar insomnia dengan mengambil kesimpulan dari gejala-gejala yang di rasakan oleh pasien, pasien dengan data di atas terdiagnosa penyakit <b>{{ $riwayat->rule->penyakit->nama_penyakit }}</b>. </p>
+            <p>Berdasarkan hasil diagnosa sistem pakar insomnia dengan mengambil kesimpulan dari gejala-gejala yang di rasakan oleh pasien, pasien dengan data di atas terdiagnosa penyakit <b> {{ $riwayat->kd_penyakit == 'tidak ada' ? 'tidak ada' :  $riwayat->rule->penyakit->nama_penyakit }}</b>. </p>
             <p>dengan gejala-gejala berikut:</p>
 
             <table style="border: 1px solid">
@@ -40,6 +40,9 @@
                 @endforeach
               </tbody>
             </table>
+
+            <p>Saran Penyembuhan :</p>
+            <p>{{ $riwayat->rule->penyakit->penyembuhan }}</p>
           </div>
         </div>
       </div>

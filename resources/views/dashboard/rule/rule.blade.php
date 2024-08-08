@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-sm-6 p-3">
-            <h3>Data Gejala</h3>
+            <h3>Data Rules</h3>
         </div>
     </div>
     {{-- main content table --}}

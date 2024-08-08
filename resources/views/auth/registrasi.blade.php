@@ -1,19 +1,20 @@
 @extends('layouts.main')
 @section('content')
-    <div class="container" style="height: 100vh; display: flex; align-items: center;">
-        <div class="row w-100 justify-content-center ">
-            <div class="card shadow-lg  d-flex flex-row">
-                <div class="col-lg-6 bg-insom p-5 d-flex align-items-center">
+    <div class="container">
+        <div class="card shadow-lg mt-5">
+            <div class="row w-100 justify-content-center ">
+                <div class="col-lg-6 bg-insom p-5 ">
                     <h1>Sistem Pakar Diagnosa Insomnia</h1>
                 </div>
                 <div class="col-lg-6 p-5">
-                    <form action="{{ url('register') }}" method="post">
+                    <form action="{{ url('register/store') }}" method="post">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="nama" class="form-label">Nama </label>
-                                    <input type="text" name="nama" class="form-control @error('nama')
+                                    <input type="text" name="nama"
+                                        class="form-control @error('nama')
                                         is-invalid
                                     @enderror">
                                     @error('nama')
@@ -26,7 +27,8 @@
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="tgl_lahir" class="form-label">Tanggal Lahir</label>
-                                    <input type="date" name="tgl_lahir" class="form-control @error('tgl_lahir')
+                                    <input type="date" name="tgl_lahir"
+                                        class="form-control @error('tgl_lahir')
                                         is-invalid
                                     @enderror">
                                     @error('tgl_lahir')
@@ -49,7 +51,7 @@
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="alamat" class="form-label">Alamat</label>
-                                    <input type="text"  name="alamat" class="form-control">
+                                    <input type="text" name="alamat" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -69,8 +71,7 @@
                         </div>
                         <button type="submit" class=" btn btn-success">Register</button>
                     </form>
-                    <p class="mt-3 ">Sudah punya akun ? klik <a href="{{ url('/login') }}"
-                            class="text-black">Login</a></p>
+                    <p class="mt-3 ">Sudah punya akun ? klik <a href="{{ url('/login') }}" class="text-black">Login</a></p>
                 </div>
             </div>
         </div>

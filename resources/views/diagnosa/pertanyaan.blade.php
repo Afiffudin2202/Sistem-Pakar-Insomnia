@@ -12,6 +12,12 @@
                     <div class="card-header">
                         <h3>Pilih gejala-gejala di bawah sesuai dengan yang anda rasakan !!</h3>
                     </div>
+
+                    @if (session()->has('error'))
+                        <span class="text-red p-3">
+                            <i>{{ session('error') }}</i>
+                        </span>
+                    @endif
                     <div class="card-body">
                         <form action="{{ url('/diagnosa/pertanyaan/store') }}" method="post">
                             @csrf
@@ -32,6 +38,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+
                             <button type="submit" class="btn btn-primary">Diagnosa</button>
                         </form>
                     </div>

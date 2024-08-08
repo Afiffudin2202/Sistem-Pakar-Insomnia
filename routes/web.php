@@ -25,14 +25,16 @@ Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'loginAuth']);
     Route::get('/register', [AuthController::class, 'register']);
-    Route::post('/register', [AuthController::class, 'registerStore']);
+    Route::post('/register/store', [AuthController::class, 'registerStore']);
 });
 
 Route::get('/', function () {
-    return view('home');
+    $penyakit = Penyakit::all();
+    return view('home', compact('penyakit'));
 });
 Route::get('/beranda', function () {
-    return view('home');
+    $penyakit = Penyakit::all();
+    return view('home', compact('penyakit'));
 });
 
 Route::get('/diagnosa', function () {
@@ -46,7 +48,8 @@ Route::get('/informasi', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->middleware('auth');
     Route::get('/diagnosa/pertanyaan', [DiagnosaController::class, 'index']);
-    Route::post('/diagnosa/pertanyaan/store', [DiagnosaController::class, 'store']);
+    // Route::post('/diagnosa/pertanyaan/store', [DiagnosaController::class, 'store']);
+    Route::post('/diagnosa/pertanyaan/store', [DiagnosaController::class, 'diagnose']);
     Route::get('/detailhasil', [DiagnosaController::class, 'detailHasil'])->name('detailhasil');
     route::get('/riwayatdiagnosa', [RiwayatController::class, 'riwayatPasien']);
     Route::get('/cetak-detailhasil/{id}', [RiwayatController::class, 'cetakHasil']);

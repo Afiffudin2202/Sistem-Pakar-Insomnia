@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
+    <title>Sistem Pakar Insomnia</title>
     <!-- Style css-->
-    {{-- <link rel="stylesheet" href="{{ asset('/') }}dist/css/style.css"> --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Google Font: Source Sans Pro -->
     {{-- <link rel="stylesheet" --}}
     {{-- href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"> --}}
@@ -54,7 +55,8 @@
     $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="{{ asset('/') }}plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+{{-- <script src="{{ asset('/') }}plugins/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
 <!-- ChartJS -->
 <script src="{{ asset('/') }}plugins/chart.js/Chart.min.js"></script>
 <!-- Sparkline -->
@@ -75,10 +77,8 @@
 <script src="{{ asset('/') }}plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/') }}dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('/') }}dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('/') }}dist/js/pages/dashboard.js"></script>
+
+
 <!-- DataTables  & Plugins -->
 <script src="{{ asset('/') }}plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="{{ asset('/') }}plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

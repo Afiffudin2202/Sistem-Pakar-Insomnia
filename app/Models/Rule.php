@@ -33,4 +33,11 @@ class Rule extends Model
     {
         return $this->belongsTo(Gejala::class, 'kd_gejala', 'kd_gejala');
     }
+
+
+    // Ambil gejala terkait dengan rule ini
+    public function getGejalaIdsAttribute($value)
+    {
+        return explode(',', $value);
+    }
 }

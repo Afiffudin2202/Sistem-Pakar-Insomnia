@@ -47,7 +47,8 @@ class AuthController extends Controller
 
         $validated = $request->validate($rules);
         $validated['password'] = Hash::make($validated['password']);
-        User::create($validated);
+
+        User::create($request->all());
         $request->session()->flash('success', 'berhasil register');
         return redirect('/login');
     }

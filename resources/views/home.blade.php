@@ -21,27 +21,14 @@
                 Jenis Penyakit Insomnia
             </h3>
             <div class="row m-1 text-dark justify-content-center">
+                @foreach ($penyakit as $item)
                 <div class="col-lg-8">
                     <div class="card p-3 rounded-0">
-                        <h3>Insomnia Akut</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi adipisci iure sapiente nemo,
-                            voluptatum aliquid voluptates ducimus saepe at natus.</p>
+                        <h3>{{ $item->nama_penyakit }}</h3>
+                     
                     </div>
                 </div>
-                <div class="col-lg-8">
-                    <div class="card p-3 rounded-0">
-                        <h3>Insomnia Kronic</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi adipisci iure sapiente nemo,
-                            voluptatum aliquid voluptates ducimus saepe at natus.</p>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="card p-3 rounded-0">
-                        <h3>Insomnia Temporer</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi adipisci iure sapiente nemo,
-                            voluptatum aliquid voluptates ducimus saepe at natus.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </section>
     </div>

@@ -15,7 +15,6 @@ class PenyakitController extends Controller
         if (auth()->guest()) {
             abort(403);
         }
-
         $penyakit = Penyakit::all();
         return view('dashboard.penyakit.penyakit', compact('penyakit'));
     }

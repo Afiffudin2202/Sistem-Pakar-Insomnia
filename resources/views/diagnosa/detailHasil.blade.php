@@ -7,9 +7,8 @@
             </div>
         </div>
         <div class="row justify-content-end">
-            <button
-                onclick="window.location='{{ url('/riwayatdiagnosa' ) }}'"
-                class="btn btn-success mx-2">riwayat & Download</button>
+            <button onclick="window.location='{{ url('/riwayatdiagnosa') }}'" class="btn btn-success mx-2">riwayat &
+                Download</button>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -19,7 +18,12 @@
                         <div class="col-lg-6">
                             <div class="border p-3 rounded-0">
                                 <h3>hasil Diagnosa :</h3>
-                                <p>Diagnosa : Insomnia</p>
+                                <p>Diagnosa : @if ($penyakit != 'tidak ada')
+                                        Insomnia
+                                    @else
+                                        -
+                                    @endif
+                                </p>
                                 <p>Jenis : {{ $penyakit }}</p>
                             </div>
                         </div>
@@ -45,25 +49,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        {{-- <td>{{ implode(', ', $gejala_dipilih) }}</td>
+
+                                    {{-- <td>{{ implode(', ', $gejala_dipilih) }}</td>
                                     <td>{{ implode(', ', $gejala_dipilih) }}</td> --}}
-                                        @foreach ($dataGejala as $item)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item['nama'] }}</td>
-                                    </tr>
+                                    @foreach ($dataGejala as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item['nama'] }}</td>
+                                        </tr>
                                     @endforeach
-                                    </tr>
+
                                 </tbody>
                             </table>
+                            @if ($penyakit != 'tidak ada')
+                                <p><b> Saran</b> : {{ $penyembuhan->penyembuhan }}</p>
+                            @endif
                         </div>
                     </div>
 
-                    {{-- saran --}}
-                    <div class="row justify-content-end px-5 py-1">
-                        <p>Saran : Kurangin Stress, Perbanyak Minum air putih</p>
-                    </div>
                 </div>
             </div>
         </div>

@@ -15,10 +15,6 @@ class RuleController extends Controller
      */
     public function index()
     {
-        // $rule = DB::table('rules')
-        //     ->join('gejalas', 'rules.kd_gejala', '=', 'gejalas.kd_gejala')
-        //     ->join('penyakits', 'rules.kd_penyakit', '=', 'penyakits.kd_penyakit')
-        //     ->select('rules.*', 'gejalas.nama_gejala', 'penyakits.nama_penyakit')->get();
         $rule = Rule::with('gejala', 'penyakit')->get();
         $gejala = Gejala::all();
         $penyakit = Penyakit::all();
@@ -43,11 +39,8 @@ class RuleController extends Controller
             'kd_gejala' => 'required',
             'kd_penyakit' => 'required'
         ];
-
         $validated = $request->validate($rules);
-
         Rule::create($validated);
-
         return redirect('/dashboard/rule')->with('success', 'Berhasil menambah rule baru');
     }
 
@@ -91,9 +84,7 @@ class RuleController extends Controller
     public function destroy($kd_rule)
     {
         $rule = Rule::where('kd_rule', $kd_rule)->first();
-
         $rule->delete();
-
         return redirect('/dashboard/rule')->with('success', 'Data berhasil dihapus');
     }
 }
